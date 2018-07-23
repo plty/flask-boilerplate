@@ -1,20 +1,31 @@
+# flask
 from flask import Flask
+app = Flask(__name__)
+app.config.from_pyfile('config.py')
+
+
+# flask_mail_sendgrid
+from flask_mail_sendgrid import MailSendGrid
+mail = MailSendGrid(app)
+
+
+# flask_sqlalchemy
+from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy(app)
+
+
+# flask_migrations
 from flask_migrate import Migrate, MigrateCommand
-from flask_script import Manager
-from app.defaults import db
+migrate = Migrate(app, db)
+
+
+# flask_security
+from flask_security import Security, SQLAlchemyUserDatastore
 import app.models as models
+user_datastore = SQLAlchemyUserDatastore(db, models.User, models.Role)
+security = Security(app, user_datastore)
+
+
+# flask_classy
 import app.views as views
-
-
-def create_app():
-    app = Flask(__name__)
-    app.config.from_pyfile('config.py')
-    db.init_app(app)
-    migrate = Migrate(app, db)
-    views.register(app)
-    return app
-
-
-# class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(128))
+views.register(app)

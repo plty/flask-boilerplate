@@ -5,5 +5,5 @@ from app.views.register import RegisterView
 
 def register(app):
     MainView.register(app)
-    LoginView.register(app)
-    RegisterView.register(app)
+    # LoginView.register(app)
+    # RegisterView.register(app)
