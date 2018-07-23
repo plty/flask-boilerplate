@@ -6,3 +6,6 @@ class MainView(FlaskView):
 
     def index(self):
         return "Hello, this is the MainView"
+
+    def otto(self):
+        return "hai kamu"

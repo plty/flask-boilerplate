@@ -21,11 +21,11 @@ migrate = Migrate(app, db)
 
 # flask_security
 from flask_security import Security, SQLAlchemyUserDatastore
-import app.models as models
+from fb import models
 user_datastore = SQLAlchemyUserDatastore(db, models.User, models.Role)
 security = Security(app, user_datastore)
 
 
 # flask_classy
-import app.views as views
+from fb import views
 views.register(app)
