@@ -19,13 +19,14 @@ from flask_migrate import Migrate, MigrateCommand
 migrate = Migrate(app, db)
 
 
-admin = Admin(app, name=microblog, template_mode='bootstrap3')
 # flask_security
 from flask_security import Security, SQLAlchemyUserDatastore
 from fb import models
 user_datastore = SQLAlchemyUserDatastore(db, models.User, models.Role)
 security = Security(app, user_datastore)
 
+from flask_admin import Admin
+admin = Admin(app, template_mode='bootstrap3')
 
 # flask_classy
 from fb import views

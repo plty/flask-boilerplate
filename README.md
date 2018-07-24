@@ -5,7 +5,7 @@ flask-boilerplate
 - [X] flask\_migrate
 - [X] flask\_classy
 - [X] flask\_script
-- [ ] flask\_security
+- [X] flask\_security
   - [X] flask\_login
   - [X] flask\_wtf
   - [X] flask\_bcrypt
