@@ -8,5 +8,5 @@ class MainView(FlaskView):
     def index(self):
         return "Hello, this is the MainView"
 
-    def otto(self):
-        return render_template('templates/otto.html')
+    def weird(self):
+        return render_template('some_weird_template.html')
