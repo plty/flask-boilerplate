@@ -9,8 +9,8 @@ flask-boilerplate
   - [X] flask\_login
   - [X] flask\_wtf
   - [X] flask\_bcrypt
-- [ ] flask\_admin
-- [ ] flask\_mail
+- [X] flask\_admin
+- [X] flask\_mail
 
 Optional:
 - [ ] flask\_testing

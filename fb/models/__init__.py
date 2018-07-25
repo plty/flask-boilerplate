@@ -35,3 +35,6 @@ class User(db.Model, UserMixin):
 
     # additional
     username = db.Column(db.String(255), unique=True)
+
+    def __str__(self):
+        return self.email
