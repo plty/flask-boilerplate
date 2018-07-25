@@ -15,5 +15,5 @@ flask-boilerplate
 Optional:
 - [ ] flask\_testing
 - [ ] flask\_exceptional
-- [ ] flask\_themes
+- [X] Sentry
 
