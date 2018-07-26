@@ -1,12 +1,12 @@
 from flask import render_template
-from flask_classy import FlaskView
+from fb.views.base import BaseView
 
 
-class MainView(FlaskView):
+class MainView(BaseView):
     route_base = '/'
 
     def index(self):
         return "Hello, this is the MainView"
 
-    def weird(self):
+    def weird_page(self):
         return render_template('some_weird_template.html')
